@@ -1,0 +1,28 @@
+{
+  "name": "demo-shop-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && npm install && node index.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patoro7247/demo-shop-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patoro7247/demo-shop-app/issues"
+  },
+  "homepage": "https://github.com/patoro7247/demo-shop-app#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.8"
+  },
+  "engines" : {
+    "node" : "16.15.0"
+  }
+}

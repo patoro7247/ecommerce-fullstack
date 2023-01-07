@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+ api:
+  build:
+   context: ./api
+   dockerfile: Dockerfile.prod
+  environment:
+   - NODE_ENV=$API_NODE_ENV
+   - PORT=$API_PORT
+  ports:
+   - $API_PORT:$API_PORT
+  volumes:
+   - /app/node_modules
+ ui_build:
+  build:
+   context: ./client
+   dockerfile: Dockerfile.prod
+  environment:
+   - NODE_ENV=$UI_NODE_ENV
+   - REACT_APP_API_HOST
+  volumes:
+   - ./client/build:/app/build
+   - /app/node_modules
+ ui_server:
+  image: nginx:1.19.4-alpine
+  ports:
+   - 80:80
+  volumes:
+   - ./client/build:/usr/share/nginx/html
